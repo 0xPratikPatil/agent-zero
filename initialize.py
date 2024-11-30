@@ -5,8 +5,8 @@ from python.helpers import files
 def initialize():
     
     # main chat model used by agents (smarter, more accurate)
-    chat_llm = models.get_openai_chat(model_name="gpt-4o-mini", temperature=0)
-    # chat_llm = models.get_ollama_chat(model_name="llama3.2:3b-instruct-fp16", temperature=0)
+    # chat_llm = models.get_openai_chat(model_name="gpt-4o-mini", temperature=0)
+    chat_llm = models.get_ollama_chat(model_name="llama3.1:8b", temperature=0)
     # chat_llm = models.get_lmstudio_chat(model_name="lmstudio-community/Meta-Llama-3.1-8B-Instruct-GGUF", temperature=0)
     # chat_llm = models.get_openrouter_chat(model_name="openai/o1-mini-2024-09-12")
     # chat_llm = models.get_azure_openai_chat(deployment_name="gpt-4o-mini", temperature=0)
@@ -20,8 +20,8 @@ def initialize():
     utility_llm = chat_llm
 
     # embedding model used for memory
-    embedding_llm = models.get_openai_embedding(model_name="text-embedding-3-small")
-    # embedding_llm = models.get_ollama_embedding(model_name="nomic-embed-text")
+    # embedding_llm = models.get_openai_embedding(model_name="text-embedding-3-small")
+    embedding_llm = models.get_ollama_embedding(model_name="nomic-embed-text")
     # embedding_llm = models.get_huggingface_embedding(model_name="sentence-transformers/all-MiniLM-L6-v2")
     # embedding_llm = models.get_lmstudio_embedding(model_name="nomic-ai/nomic-embed-text-v1.5-GGUF")
 
